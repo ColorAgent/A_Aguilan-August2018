@@ -2,8 +2,8 @@
 /**
  * Prints message in console
  * 
- * @author Alex 
- * @version (a version number or a date)
+ * @author Alex Aguilan
+ * @version (Eclispe Photon Version 3.3.0)
  */
 public class Hello_world
 {
@@ -11,5 +11,8 @@ public class Hello_world
     {
         System.out.println("Hello World!/ From <Alex>"); 
         System.out.println("Kappa"); 
+        System.out.print("I have");
+        System.out.print("no idea");
+        System.out.print("what I'm doing");
     }
 }
