@@ -4,34 +4,26 @@ public class Hourglass {
 		printBase();
 		System.out.println();
 		printTophalf();
+	// print base
 	// print top half
 	// print mid
 	// print bot half
+	// print string of chars
 		printBase();
 	}
 	
 	// takes the string to print repeatedly and the number of repeats and prints
 	public static void printStringofChars(String str, int count) {
 		for (int i = 0; i<10; i++) {
-			System.out.print("\"");
+			System.out.print(str);
 		}
 	}
-	
-	
-	
-	
-	
-	
 	public static void printBase() {
-		printStringofChars("l", i);
-		printStringofChars("\"",10);
-		printStringofChars("l", i);
+		printStringofChars("\"", 2);
+		System.out.println();
 	}
-	
-	
-	
 	public static void printTophalf() {
-		for (int i = 1; i<=4; i++) {
+		for (int i = 1; i<=2; i++) {
 			printStringofChars(" ", i);
 			printStringofChars("\\",1);
 			printStringofChars(":", 10-2*i);
