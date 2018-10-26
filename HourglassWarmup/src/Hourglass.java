@@ -23,10 +23,10 @@ public class Hourglass {
 		System.out.println();
 	}
 	public static void printTophalf() {
-		for (int i = 1; i<=2; i++) {
-			printStringofChars(" ", i);
-			printStringofChars("\\",1);
+		for (int i = 1; i<=4; i++) {
+			System.out.print("\\");
 			printStringofChars(":", 10-2*i);
+			System.out.print("/");
 			System.out.println();
 		}
 	}
