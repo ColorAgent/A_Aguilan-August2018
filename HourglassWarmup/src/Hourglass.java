@@ -4,6 +4,8 @@ public class Hourglass {
 		printBase();
 		System.out.println();
 		printTophalf();
+		mid();
+		Bothalf();
 	// print base
 	// print top half
 	// print mid
@@ -13,25 +15,46 @@ public class Hourglass {
 	}
 	
 	// takes the string to print repeatedly and the number of repeats and prints
-	public static void printStringofChars(String str, int count) {
-		for (int i = 0; i<10; i++) {
-			System.out.print(str);
+	public static void printStringofChars(String value, int amountofvalues) {
+		for (int i = 0; i<amountofvalues; i++) {
+			System.out.print(value);
 		}
 	}
 	public static void printBase() {
-		printStringofChars("\"", 2);
-		System.out.println();
+		System.out.print("|");
+		printStringofChars("\"", 10);
+		System.out.print("|");
 	}
 	public static void printTophalf() {
-		for (int i = 1; i<=2; i++) {
-			printStringofChars(" ", i);
-			printStringofChars("\\",1);
-			printStringofChars(":", 10-2*i);
+		for (int i = 1; i<=4; i++) {
+				printStringofChars(" ", i);
+				for (int j = 1; j<=1; j++) {
+					int DecreasingAmount = 10 - (2*i);
+					printStringofChars(":", DecreasingAmount);
+			}
 			System.out.println();
 		}
 	}
+	public static void Bothalf() {
+		for (int i = 4; i>=1; i--) {
+				printStringofChars(" ", i);
+				for (int j = 1; j<=1; j++) {
+					int DecreasingAmount = 10 - (2*i);
+					printStringofChars(":", DecreasingAmount);
+				}
+				System.out.println();
+			}
+	}
+	public static void mid() {
+		System.out.println("    ||");
+		}
+	}
+
+	// \::::::::/ :=8
+	//  \::::::/ :=6
+	//   \::::/ :=4
+	//    \::/ :=2
+
 	
 	
 	
-	
-}
