@@ -27,17 +27,11 @@ public class Hourglass {
 	}
 	public static void printTophalf() {
 		for (int i = 1; i<=4; i++) {
-<<<<<<< HEAD
-			System.out.print("\\");
-			printStringofChars(":", 10-2*i);
-			System.out.print("/");
-=======
 				printStringofChars(" ", i);
 				for (int j = 1; j<=1; j++) {
 					int DecreasingAmount = 10 - (2*i);
 					printStringofChars(":", DecreasingAmount);
 			}
->>>>>>> branch 'master' of https://github.com/ColorAgent/A_Aguilan-August2018.git
 			System.out.println();
 		}
 	}
