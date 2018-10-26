@@ -1,4 +1,5 @@
 //note lookup fizzbuzz video
+//11 print lines total
 public class Hourglass {
 	public static void main(String[] args) {
 		printBase();
@@ -30,7 +31,9 @@ public class Hourglass {
 				printStringofChars(" ", i);
 				for (int j = 1; j<=1; j++) {
 					int DecreasingAmount = 10 - (2*i);
+					System.out.print("\\");
 					printStringofChars(":", DecreasingAmount);
+					System.out.print("/");
 			}
 			System.out.println();
 		}
@@ -40,13 +43,15 @@ public class Hourglass {
 				printStringofChars(" ", i);
 				for (int j = 1; j<=1; j++) {
 					int DecreasingAmount = 10 - (2*i);
+					System.out.print("/");
 					printStringofChars(":", DecreasingAmount);
+					System.out.print("\\");
 				}
 				System.out.println();
 			}
 	}
 	public static void mid() {
-		System.out.println("    ||");
+		System.out.println("     ||");
 		}
 	}
 
