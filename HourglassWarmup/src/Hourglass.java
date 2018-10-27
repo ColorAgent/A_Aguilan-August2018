@@ -1,17 +1,20 @@
-//note lookup fizzbuzz video
-//11 print lines total
+/* This class contains methods that help make up the shape of an hourglass
+ * @author Alex Aguilan  
+ * Version October 26
+ */
+// The hourglass itself made by using various constructed methods
 public class Hourglass {
 	public static void main(String[] args) {
+		// print base
+		// print top half
+		// print mid
+		// print bot half
+		// print string of chars
 		printBase();
 		System.out.println();
 		printTophalf();
 		mid();
 		Bothalf();
-	// print base
-	// print top half
-	// print mid
-	// print bot half
-	// print string of chars
 		printBase();
 	}
 	
@@ -21,11 +24,13 @@ public class Hourglass {
 			System.out.print(value);
 		}
 	}
+	// the base of the hourglass
 	public static void printBase() {
 		System.out.print("|");
 		printStringofChars("\"", 10);
 		System.out.print("|");
 	}
+	// the upper portion of the hourglass
 	public static void printTophalf() {
 		for (int i = 1; i<=4; i++) {
 				printStringofChars(" ", i);
@@ -38,6 +43,7 @@ public class Hourglass {
 			System.out.println();
 		}
 	}
+	// the lower portion of the hourglass
 	public static void Bothalf() {
 		for (int i = 4; i>=1; i--) {
 				printStringofChars(" ", i);
@@ -50,6 +56,7 @@ public class Hourglass {
 				System.out.println();
 			}
 	}
+	// the middle section of the hourglass
 	public static void mid() {
 		System.out.println("     ||");
 		}
