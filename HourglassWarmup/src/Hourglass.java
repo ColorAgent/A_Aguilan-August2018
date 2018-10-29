@@ -7,12 +7,12 @@ public class Hourglass {
 		printTophalf();
 		mid();
 		Bothalf();
+		printBase();
 	// print base
 	// print top half
 	// print mid
 	// print bot half
 	// print string of chars
-		printBase();
 	}
 	
 	// takes the string to print repeatedly and the number of repeats and prints
@@ -21,11 +21,13 @@ public class Hourglass {
 			System.out.print(value);
 		}
 	}
+	// the base of the hourglass
 	public static void printBase() {
 		System.out.print("|");
 		printStringofChars("\"", 10);
 		System.out.print("|");
 	}
+	// the upper half of the hourglass
 	public static void printTophalf() {
 		for (int i = 1; i<=4; i++) {
 				printStringofChars(" ", i);
@@ -38,6 +40,7 @@ public class Hourglass {
 			System.out.println();
 		}
 	}
+	// the inverse of the upperhalf
 	public static void Bothalf() {
 		for (int i = 4; i>=1; i--) {
 				printStringofChars(" ", i);
@@ -50,6 +53,7 @@ public class Hourglass {
 				System.out.println();
 			}
 	}
+	//the mid section of the hourglass
 	public static void mid() {
 		System.out.println("     ||");
 		}
