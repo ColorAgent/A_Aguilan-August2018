@@ -26,10 +26,13 @@ import java.util.*;
 
 //What happens if you "I reallyreally likeapples".split("really") ?
 			System.out.println(Arrays.toString("I reallyreally likeapples!".split("really")));
+			System.out.println(part1("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
+			System.out.println(part2("apples pineapples bread lettus tomato bacon mayo ham bread cheese"));
 		}
 //Your task Part 1:
-			public static String toImproperFrac(String trigger) {
-				
+			public static String part1(String sandwich) {
+				return Arrays.toString(sandwich.split("bread"));
+			}
 /*Write a method that take in a string like
 
 * "applespineapplesbreadlettustomatobaconmayohambreadcheese"
@@ -45,6 +48,9 @@ import java.util.*;
 */
 
 //Your task pt 2:
+			public static String part2(String sandwich) {
+				return Arrays.toString(sandwich.split(" "));
+			}
 
 /*Write a method that take in a string like
 
@@ -62,6 +68,6 @@ import java.util.*;
 
  }
 
-}
+
 
 
