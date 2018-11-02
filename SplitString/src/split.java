@@ -1,6 +1,6 @@
 
 import java.util.*;
-
+a
 	public class split {
 		public static void main(String[] args) {
 			//It's a method that acts on a string, <StringName>.split(<String sp>);
