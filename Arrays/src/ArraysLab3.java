@@ -17,7 +17,8 @@ public class ArraysLab3 {
 	System.out.println("Append: " + Arrays.toString(append(arr, num)));
 	System.out.println("Remove: " + Arrays.toString(remove(arr, 2)));
 	System.out.println("SumEven: " + (sumEven(arr)));
-	System.out.println("rotateRight: " + (rotateRight(arr)));
+	System.out.print("rotateRight: ");
+	rotateRight(Arr1);
 	
 	}
 	//Arr1 indexes plus Arr2 indexes
@@ -58,15 +59,15 @@ public class ArraysLab3 {
 		return sum;
 	}
 	// Rotates all elements of an array to the right by 1
-	public static void rotateRight (int[] arr) {
-		int[] NewArray = new int[arr.length-1];
-		for(int i = 0; i < arr.length; i++) {
-			NewArray[i] = arr.length;
+	public static void rotateRight(int[] arr) {
+		int lastValue = arr[arr.length-1];
+		for(int i = arr.length-1; i > 0; i--) {
+			arr[i] = arr[i-1];
 		}
+		arr[0] = lastValue;
+		System.out.println(Arrays.toString(arr));
 	}
-	return arr;
 }
-
 
 
 
