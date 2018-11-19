@@ -1,26 +1,24 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MiniLab 
-{
+public class MiniLab {
 	
 	
-	public static void main(String[] args) 
-	{
-		
-		System.out.println("Problem 1:");
-		/* Problem 1:
-		 * Declare a new integer array called arr1.  
+	public static void main(String[] args) {
+		// problem 1
+		/* Declare a new integer array called arr1.  
 		 * It should start empty but have space to store 10 elements.   
 		 * Use a for loop to fill it with consecutive numbers starting with 2016.
 		 */
-		
-		
-		
+		int[] arr1 = new int[10];
+		for(int i = 0; i < arr1.length; i++) {
+			arr1[i] = i + 2016;
+		}
 		// Arrays.toString() takes an array and converts it to a pretty String with [ ] and ,
 		// In the code below, we store the string in a variable and then print the variable
 		//String forPrinting = Arrays.toString(arr1);       
 		//System.out.println(forPrinting);
+		System.out.println("Problem 1:" + Arrays.toString(arr1));
 		
 		
 		

@@ -38,6 +38,8 @@ public class FracCalc {
     //        
     // The function should return the result of the fraction after it has been calculated
     //      e.g. return ==> "1_1/4"
+    
+    // methods and stuff
     public static String produceAnswer(String input) {
     	
         // TODO: Implement this function to produce the solution to the input
