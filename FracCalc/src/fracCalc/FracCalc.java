@@ -18,8 +18,7 @@ public class FracCalc {
 		//ask user for variables and does things
 		
 		while(Continue){
-			System.out.println();
-			System.out.println("This is blank for now");
+
 			
 			//ask the user if the user wants to quit and closes the loop if yes
 			System.out.println("Do you want to keep going? (Type \"quit\" to end)");
@@ -41,10 +40,11 @@ public class FracCalc {
     
     // methods and stuff
     public static String produceAnswer(String input) {
-    	
+		input.split(" ");
+		
         // TODO: Implement this function to produce the solution to the input
         
-        return "";
+        return input;
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
