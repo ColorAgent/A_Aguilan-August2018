@@ -60,11 +60,11 @@ public class ArraysLab3 {
 	}
 	// Rotates all elements of an array to the right by 1
 	public static void rotateRight(int[] arr) {
-		int lastValue = arr[arr.length-1];
+		int ShiftedVal = arr[arr.length-1];
 		for(int i = arr.length-1; i > 0; i--) {
 			arr[i] = arr[i-1];
 		}
-		arr[0] = lastValue;
+		arr[0] = ShiftedVal;
 		System.out.println(Arrays.toString(arr));
 	}
 }
