@@ -18,7 +18,9 @@ public class FracCalc {
 		//ask user for variables and does things
 		
 		while(Continue){
-
+			String Input = UserInputs.next();
+			
+			System.out.println(produceAnswer(Input));
 			
 			//ask the user if the user wants to quit and closes the loop if yes
 			System.out.println("Do you want to keep going? (Type \"quit\" to end)");
@@ -40,13 +42,18 @@ public class FracCalc {
     
     // methods and stuff
     public static String produceAnswer(String input) {
-		input.split(" ");
-		
+		String[] Fraction = input.split(" ");
+		String Operand0  = Fraction[0];
+		String Operator1 = Fraction[1];
+		String Operand2  = Fraction[2];
         // TODO: Implement this function to produce the solution to the input
-        
-        return input;
+		return whole: +;
     }
-
     // TODO: Fill in the space below with any helper methods that you think you will need
-    
+    // converts a mixed number into an improper fraction
+	public static String toImproperFrac(int whole, int numerator, int denominator) {
+		String answer;
+		answer = ((whole*denominator + numerator) + "/" + denominator);
+		return answer;
+	}
 }
