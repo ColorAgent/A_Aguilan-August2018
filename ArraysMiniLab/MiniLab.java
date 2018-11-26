@@ -28,16 +28,14 @@ public class MiniLab {
 		 * Remove the comments, run it, then find and fix the error.
 		 */
 		
-		/*
-		String[] schedule = {"Sec 7.1 and .split()", "for vs. for-each loops", "Sec 7.2", "Sec 7.4", 
 		
-				"Lab Day", "Sec 7.3", "Review", "Test"};
-		int numDays = schedule.length();
+		String[] schedule = {"Sec 7.1 and .split()", "for vs. for-each loops", "Sec 7.2", "Sec 7.4", "Lab Day", "Sec 7.3", "Review", "Test"};
+		int numDays = schedule.length; //7
 		for (int i = 1; i <= numDays; i++)
 		{
 			System.out.println("Day " + i + ": " + schedule[i]);
 		}
-		*/
+		
 		
 	
 		
