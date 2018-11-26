@@ -12,16 +12,14 @@ public class FracCalc {
     public static void main(String[] args) {
     	Scanner UserInputs = new Scanner(System.in);
 		boolean Continue = true;
-		System.out.println("Welcome to FracCalc" + "\nThis will do something when I add in the methods");
+		System.out.println("Welcome to FracCalc");
         
 		//Reads the input from the user and call produceAnswer with an equation
 		//ask user for variables and does things
 		
 		while(Continue){
 			String Input = UserInputs.next();
-			
-			System.out.println(produceAnswer(Input));
-			
+			System.out.println(produceAnswer(Input));	
 			//ask the user if the user wants to quit and closes the loop if yes
 			System.out.println("Do you want to keep going? (Type \"quit\" to end)");
 			if(UserInputs.next().equals("quit")){
@@ -42,12 +40,21 @@ public class FracCalc {
     
     // methods and stuff
     public static String produceAnswer(String input) {
-		String[] Fraction = input.split(" ");
-		String Operand0  = Fraction[0];
-		String Operator1 = Fraction[1];
+		String[] Fraction = input.split(" "); //this is a really bad array name
+		String Operand1  = Fraction[0];
+		String Operater = Fraction[1];
 		String Operand2  = Fraction[2];
+		for(int i = 0; i<Fraction.length; i++) {
+			if (Fraction[i] != "+" && Fraction[i] != "-" && Fraction[i] != "/" && Fraction[i] != "*") {
+				String[] FractionsSplit = Fraction[i].split("\\_|\\/|");
+				String whole = FractionsSplit[0];
+				String numerator = FractionsSplit[1];
+				String denominator = FractionsSplit[2];
+				Fraction[i] = "whole: " + whole + "numerator: " + numerator + "denominator: " + denominator;
+			}
+		}
         // TODO: Implement this function to produce the solution to the input
-		return whole: +;
+		return Operand2;
     }
     // TODO: Fill in the space below with any helper methods that you think you will need
     // converts a mixed number into an improper fraction
