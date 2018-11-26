@@ -11,7 +11,7 @@ import java.util.*;
 
 //It's a method that acts on a string, <StringName>.split(<String sp>);
 
-//Where sp is the string where the string splits
+//Where sp is the string where the string splitsa
 
 //And it returns an array
 
