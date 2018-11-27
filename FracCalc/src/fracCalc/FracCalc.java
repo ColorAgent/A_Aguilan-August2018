@@ -44,17 +44,8 @@ public class FracCalc {
 		String Operand1  = Fraction[0];
 		String Operater = Fraction[1];
 		String Operand2  = Fraction[2];
-		for(int i = 0; i<Fraction.length; i++) {
-			if (Fraction[i] != "+" && Fraction[i] != "-" && Fraction[i] != "/" && Fraction[i] != "*") {
-				String[] FractionsSplit = Fraction[i].split("\\_|\\/|");
-				String whole = FractionsSplit[0];
-				String numerator = FractionsSplit[1];
-				String denominator = FractionsSplit[2];
-				Fraction[i] = "whole: " + whole + "numerator: " + numerator + "denominator: " + denominator;
-			}
-		}
         // TODO: Implement this function to produce the solution to the input
-		return Operand2;
+		return FractionParts(Operand2);
     }
     // TODO: Fill in the space below with any helper methods that you think you will need
     // converts a mixed number into an improper fraction
@@ -62,5 +53,16 @@ public class FracCalc {
 		String answer;
 		answer = ((whole*denominator + numerator) + "/" + denominator);
 		return answer;
+	}
+	public static String FractionParts (String Part) {
+		String[] FractionSplit = Part.split("[_/]");
+		String PartsDefined = "Placeholder";
+		if (Part != "+" || Part != "-" || Part != "/" || Part != "*") {
+			String whole = FractionSplit[0];
+			String numerator = FractionSplit[1];
+			String denominator = FractionSplit[2];
+			PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
+		}
+		return PartsDefined;
 	}
 }
