@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Test {
 
@@ -13,21 +14,16 @@ public class Test {
 		String Operand2  = Fraction[2];
 		return Operand1 + " " + Operater + " " + Operand2;
 	}
-	public static String FractionParts (String Part) {
-		String[] FractionSplit = Part.split("[_/]");
+	public static String FractionParts (String Operand) {
+		String [] DefaultValue = {"0","0","1"};
+		String[] FractionSplit = Operand.split("[_/]");
 		String PartsDefined = "Placeholder";
-		if (Part != "+" || Part != "-" || Part != "/" || Part != "*") {
-			String whole = FractionSplit[0];
-			if (FractionSplit[1] = "") {
-				String Newwhole = Part;
-				String numerator = "0";
-				String denominator = "1";
-				PartsDefined = "whole:" + Newwhole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
-			}
+		if (Operand != "+" || Operand != "-" || Operand != "/" || Operand != "*") {
+			if (Fraction.length < 1)
+			String whole = DefaultValue[0];
 			String numerator = FractionSplit[1];
 			String denominator = FractionSplit[2];
 			PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
-			return PartsDefined;
 		}
 		return PartsDefined;
 	}
