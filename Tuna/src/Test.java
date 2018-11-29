@@ -15,16 +15,24 @@ public class Test {
 		return Operand1 + " " + Operater + " " + Operand2;
 	}
 	public static String FractionParts (String Operand) {
-		String [] DefaultValue = {"0","0","1"};
+		String[] DefaultValue = {"0","0","1"};
 		String[] FractionSplit = Operand.split("[_/]");
 		String PartsDefined = "Placeholder";
 		if (Operand != "+" || Operand != "-" || Operand != "/" || Operand != "*") {
-			if (Fraction.length < 1)
-			String whole = DefaultValue[0];
-			String numerator = FractionSplit[1];
-			String denominator = FractionSplit[2];
-			PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
+			if (FractionSplit.length < 1) {
+				String whole = FractionSplit[0];
+				String numerator = DefaultValue[1];
+				String denominator = DefaultValue[2];
+				String PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
+			} else
+
+				String whole = FractionSplit[0];
+				String numerator   = FractionSplit[1];
+				String denominator = FractionSplit[2];
+				String PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
+				}
+				return PartsDefined;
+			}
 		}
-		return PartsDefined;
 	}
-}
+	
