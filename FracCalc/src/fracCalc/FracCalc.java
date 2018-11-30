@@ -54,15 +54,34 @@ public class FracCalc {
 		answer = ((whole*denominator + numerator) + "/" + denominator);
 		return answer;
 	}
-	public static String FractionParts (String Part) {
-		String[] FractionSplit = Part.split("[_/]");
-		String PartsDefined = "Placeholder";
-		if (Part != "+" || Part != "-" || Part != "/" || Part != "*") {
-			String whole = FractionSplit[0];
-			String numerator = FractionSplit[1];
-			String denominator = FractionSplit[2];
-			PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
+	public static String FractionParts (String Operand) {
+		String[] DefaultValue = {"0","0","1"};
+		String[] FractionSplit = Operand.split("[_/]");
+		String PartsDefined = "whole:" + Operand + " " + "numerator:" + DefaultValue[1] + " " + "denominator:" + DefaultValue[2];
+		for (int i = 0; i < FractionSplit.length; i++)
+		if (FractionSplit[i] != "+" || FractionSplit[i] != "-" || FractionSplit[i] != "/" || FractionSplit[i] != "*") {
+			if (FractionSplit.length < 1) {
+				String whole = FractionSplit[0];
+				String numerator = DefaultValue[1];
+				String denominator = DefaultValue[2];
+				PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
+			} 
+			else if (FractionSplit.length > 1) {
+				for (int x = 0; x < FractionSplit.length; x++)
+				if (FractionSplit[x] != "_") {
+					String whole = DefaultValue[0];
+					String numerator = FractionSplit[0];
+					String denominator = FractionSplit[1];
+					PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
+				} else {
+					String whole = FractionSplit[0];
+					String numerator   = FractionSplit[1];
+					String denominator = FractionSplit[2];
+					PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
+				}
+			}
 		}
 		return PartsDefined;
 	}
 }
+	
