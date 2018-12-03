@@ -67,16 +67,17 @@ public class FracCalc {
 				PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
 			} 
 			else if (FractionSplit.length > 1) {
-				for (int x = 0; x < FractionSplit.length; x++)
-				if (FractionSplit[x] != "_") {
-					String whole = DefaultValue[0];
-					String numerator = FractionSplit[0];
-					String denominator = FractionSplit[1];
-					PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
-				} else {
+				String[] NoWholeArray = Operand.split("[_/]");
+				for (int x = 0; x < NoWholeArray.length; x++)
+				if (Operand.contains("_")) {
 					String whole = FractionSplit[0];
 					String numerator   = FractionSplit[1];
 					String denominator = FractionSplit[2];
+					PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
+				} else {
+					String whole = DefaultValue[0];
+					String numerator = NoWholeArray[0];
+					String denominator = NoWholeArray[1];
 					PartsDefined = "whole:" + whole + " " + "numerator:" + numerator + " " + "denominator:" + denominator;
 				}
 			}
