@@ -5,6 +5,7 @@ public class Test {
 	public static void main(String[] args) {
 		System.out.println(produceAnswer("1/4 + 1_1/2"));
 		System.out.println(FractionParts("6_5/8"));
+		System.out.println(toImproperFrac(1, 1, 1));
 
 	}
 	public static String produceAnswer(String input) {
@@ -12,7 +13,11 @@ public class Test {
 		String Operand1  = Fraction[0];
 		String Operater = Fraction[1];
 		String Operand2  = Fraction[2];
-		return Operand1 + " " + Operater + " " + Operand2;
+		String Answer= "wow";
+		if (Operater.contains("-")) {
+			
+		}
+		return Answer;
 	}
 	public static String FractionParts (String Operand) {
 		String[] DefaultValue = {"0","0","1"};
@@ -43,6 +48,11 @@ public class Test {
 			}
 		}
 		return PartsDefined;
+	}
+	public static String toImproperFrac(int whole, int numerator, int denominator) {
+		String answer;
+		answer = ((whole*denominator + numerator) + "/" + denominator);
+		return answer;
 	}
 }
 	
