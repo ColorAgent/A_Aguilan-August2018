@@ -3,19 +3,36 @@ import java.util.Arrays;
 public class Test {
 
 	public static void main(String[] args) {
-		System.out.println(produceAnswer("5_3/4 - 6_5/8"));
+		System.out.println(produceAnswer("20 - 1_1/2"));
 		System.out.println(FractionParts("6_5/8"));
 		System.out.println(toImproperFrac(1, 1, 1));
 
 	}
 	public static String produceAnswer(String input) {
 		String[] Fraction = input.split(" "); //this is a really bad array name
-		
+		String[] DefaultValue = {"0","0","1"};
 		String Operand1  = Fraction[0];
 		String[] Fraction1Parts = Operand1.split("[_/]");
-		int whole1 = Integer.parseInt(Fraction1Parts[0]);
-		int denominator1 = Integer.parseInt(Fraction1Parts[1]);
-		int numerator1 = Integer.parseInt(Fraction1Parts[2]);
+		int whole1 = 1;
+		int numerator1 = 1;
+		int denominator1 = 1;
+		if (Fraction1Parts.length < 1) {
+			whole1 = Integer.parseInt(Fraction1Parts[0]);
+			numerator1 = Integer.parseInt(DefaultValue[1]);
+			denominator1 = Integer.parseInt(DefaultValue[2]);
+		} 
+		else if (Fraction1Parts.length > 1) {
+			String[] NoWholeArray = Operand1.split("[_/]");
+			if (Operand1.contains("_")) {
+				whole1 = Integer.parseInt(Fraction1Parts[0]);
+				numerator1 = Integer.parseInt(Fraction1Parts[1]);
+				denominator1 = Integer.parseInt(Fraction1Parts[2]);
+			} else {
+				whole1 = Integer.parseInt(DefaultValue[0]);
+				numerator1 = Integer.parseInt(NoWholeArray[0]);
+				denominator1 = Integer.parseInt(NoWholeArray[1]);
+			}
+		}
 		String ImproperFrac1 = toImproperFrac(whole1, denominator1, numerator1);
 		String[] Improper1Parts = ImproperFrac1.split("/");
 		int ImproperNum1 = Integer.parseInt(Improper1Parts[0]);
@@ -48,8 +65,8 @@ public class Test {
 			if (Fraction[1].contains("*")) {
 				int FinalNum = NewNum1 + NewNum2;
 				Final = FinalNum + "/" + NewDenom;
-			} 
-		} else {
+			}
+		if (ImproperDenom1 == ImproperDenom2) {
 			if (Fraction[1].contains("-")) {
 				int FinalNum = ImproperNum1 - ImproperDenom2;
 				Final = FinalNum + "/" + ImproperDenom2;
@@ -63,8 +80,9 @@ public class Test {
 				Final = FinalNum + "/" + ImproperDenom2;
 			}
 		}
-		return FractionParts(Final);
 	}
+	return ImproperFrac1 + Final;
+}
 	// Identifies the Whole, Denominator, and Numerator of the fraction
 	public static String FractionParts (String Operand) {
 		String[] DefaultValue = {"0","0","1"};
@@ -80,7 +98,6 @@ public class Test {
 			} 
 			else if (FractionSplit.length > 1) {
 				String[] NoWholeArray = Operand.split("[_/]");
-				for (int x = 0; x < NoWholeArray.length; x++)
 				if (Operand.contains("_")) {
 					String whole = FractionSplit[0];
 					String numerator   = FractionSplit[1];
