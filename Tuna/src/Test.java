@@ -3,21 +3,24 @@ import java.util.Arrays;
 public class Test {
 
 	public static void main(String[] args) {
-		System.out.println(produceAnswer("800 - 1_1/2"));
+		System.out.println(produceAnswer("20 - 1_1/2"));
 		System.out.println(FractionParts("6_5/8"));
 		System.out.println(toImproperFrac(20, 0, 1));
-
 	}
 	public static String produceAnswer(String input) {
 		String[] Fraction = input.split(" "); 
 		String[] DefaultValue = {"0","0","1"};
 		String Operand1  = Fraction[0];
 		String[] Fraction1Parts = Operand1.split("[_/]");
+		int whole1;
+		int numerator1;
+		int denominator1;
+		// checks the first fraction to determine if its a fraction or whole number
 		if (Fraction1Parts.length < 1) {
-			whole1 = Integer.parseInt(Fraction1Parts[0]);
+			whole1 = Integer.parseInt(Operand1);
 			numerator1 = Integer.parseInt(DefaultValue[1]);         
 			denominator1 = Integer.parseInt(DefaultValue[2]);
-		} 
+		}
 		if (Fraction1Parts.length > 1) {
 			String[] NoWholeArray = Operand1.split("[_/]");
 			if (Operand1.contains("_")) {
@@ -78,7 +81,7 @@ public class Test {
 			}
 		}
 	}
-	return ImproperFrac1;
+	return whole1 + "bacon";
 }
 	// Identifies the Whole, Denominator, and Numerator of the fraction
 	public static String FractionParts (String Operand) {
