@@ -12,9 +12,9 @@ public class Test {
 		String[] DefaultValue = {"0","0","1"};
 		String Operand1  = Fraction[0];
 		String[] Fraction1Parts = Operand1.split("[_/]");
-		int whole1;
-		int numerator1;
-		int denominator1;
+		int whole1 = 0;
+		int numerator1 = 0;
+		int denominator1 = 0;
 		// checks the first fraction to determine if its a fraction or whole number
 		if (Fraction1Parts.length < 1) {
 			whole1 = Integer.parseInt(Operand1);
