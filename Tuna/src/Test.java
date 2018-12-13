@@ -3,11 +3,11 @@ import java.util.Arrays;
 public class Test {
 
 	public static void main(String[] args) {
-		System.out.println(produceAnswer("4/5 + 2/8"));
+		System.out.println(produceAnswer("-12_3/7 - -20_2/3"));
 		System.out.println(FractionParts("6_5/8"));
 		System.out.println(toImproperFrac(20, 0, 1));
 	}
-	public static String produceAnswer(String input) {
+    public static String produceAnswer(String input) {
 		String[] Fraction = input.split(" "); 
 		String[] DefaultValue = {"0","0","1"};
 		String Operand1  = Fraction[0];
@@ -38,6 +38,12 @@ public class Test {
 		String[] Improper1Parts = ImproperFrac1.split("/");
 		int ImproperNum1 = Integer.parseInt(Improper1Parts[0]);
 		int ImproperDenom1 = Integer.parseInt(Improper1Parts[1]);
+		if (Operand1.contains("-")){
+			if (ImproperNum1 < 0) {
+				ImproperNum1 = ImproperNum1;
+			} else
+			ImproperNum1 = absValue(ImproperNum1);
+		}
 
 				
 		String Operand2  = Fraction[2];
@@ -68,12 +74,22 @@ public class Test {
 		String[] Improper2Parts = ImproperFrac2.split("/");
 		int ImproperNum2 = Integer.parseInt(Improper2Parts[0]);
 		int ImproperDenom2 = Integer.parseInt(Improper2Parts[1]);
+		if (Operand2.contains("-")){
+			ImproperNum2 = absValue(ImproperNum2);
+			if (ImproperNum2 < 0) {
+				ImproperNum2 = ImproperNum2;
+			} else
+			ImproperNum2 = absValue(ImproperNum2);
+		}
 		String Final = "0";
 		
 		if (ImproperDenom1 != ImproperDenom2) {
 			if (Fraction[1].contains("-")) {
-				int FinalNum = (ImproperNum1 * ImproperDenom2) - (ImproperNum2 * ImproperDenom1);
+				int FinalNum = (ImproperNum2 * ImproperDenom1) - (ImproperNum1 * ImproperDenom2);
 				int NewDenom = ImproperDenom1 * ImproperDenom2;
+				if (Operand1.contains("-") && Operand2.contains("-")) {
+					FinalNum = FinalNum * -1;
+				}
 				Final = FinalNum + "/" + NewDenom;
 			}
 			if (Fraction[1].contains("+")) {
@@ -88,30 +104,34 @@ public class Test {
 			}
 			if (Fraction[1].contains("/")) {
 				int FinalNum = ImproperNum1 * ImproperDenom2;
-				int NewDenom = ImproperNum2 * ImproperNum1;
+				int NewDenom = ImproperNum2 * ImproperDenom1;
 				Final = FinalNum + "/" + NewDenom; //you can simplify
 			}
 		}
 		if (ImproperDenom1 == ImproperDenom2) {
 			if (Fraction[1].contains("-")) {
 				int FinalNum = ImproperNum1 - ImproperNum2;
-				Final = FinalNum + "/" + ImproperDenom2;
+				Final = FinalNum + "/" + Integer.parseInt(Fraction1Parts[2]);;
 			}
 			if (Fraction[1].contains("+")) {
 				int FinalNum = ImproperNum1 + ImproperNum2;
 				Final = FinalNum + "/" + ImproperDenom2;
 			}
 			if (Fraction[1].contains("*")) {
-				int FinalNum = ImproperNum1 + ImproperNum2;
+				int FinalNum = ImproperNum1 * ImproperNum2;
 				Final = FinalNum + "/" + ImproperDenom2;
 			}
 			if (Fraction[1].contains("/")) {
 				int FinalNum = ImproperNum1 * ImproperDenom2;
-				int NewDenom = ImproperNum2 * ImproperNum1;
+				int NewDenom = ImproperNum2 * ImproperDenom1;
 				Final = FinalNum + "/" + NewDenom; //you can simplify
 			}
 		}
-		return ImproperFrac2;
+		String[] FinalConvert = Final.split("/");
+		int FinalNum = Integer.parseInt(FinalConvert[0]);
+		int FinalDenom = Integer.parseInt(FinalConvert[1]);
+		String Answer = toMixedNum(FinalNum, FinalDenom);
+		return Final;
 	}
 	// Identifies the Whole, Denominator, and Numerator of the fraction
 	public static String FractionParts (String Operand) {
@@ -146,7 +166,20 @@ public class Test {
 	// turns the mixed number into an improper fraction
 	public static String toImproperFrac(int whole, int numerator, int denominator) {
 		String answer;
+		if (whole < 0) {
+			whole = whole * -1;
+		}
 		answer = ((whole*denominator + numerator) + "/" + denominator);
+		return answer;
+	}
+	//returns the absolute value of the input
+	public static int absValue(int num) {	
+		return num *-1;
+	}
+	//changes an improper fraction in the form of the integers into a mixed number and returns it
+	public static String toMixedNum(int numerator, int denominator) {
+		String answer;
+		answer = (numerator / denominator + "_" + numerator % denominator + "/" + denominator);
 		return answer;
 	}
 }
