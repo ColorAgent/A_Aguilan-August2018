@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Test {
 
 	public static void main(String[] args) {
-		System.out.println(produceAnswer("-12_3/7 - -20_2/3"));
+		System.out.println(produceAnswer("9/10 - 1/10"));
 		System.out.println(FractionParts("6_5/8"));
 		System.out.println(toImproperFrac(20, 0, 1));
 	}
@@ -111,7 +111,7 @@ public class Test {
 		if (ImproperDenom1 == ImproperDenom2) {
 			if (Fraction[1].contains("-")) {
 				int FinalNum = ImproperNum1 - ImproperNum2;
-				Final = FinalNum + "/" + Integer.parseInt(Fraction1Parts[2]);;
+				Final = FinalNum + "/" + denominator1;
 			}
 			if (Fraction[1].contains("+")) {
 				int FinalNum = ImproperNum1 + ImproperNum2;

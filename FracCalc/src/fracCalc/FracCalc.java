@@ -143,15 +143,15 @@ public class FracCalc {
 		if (ImproperDenom1 == ImproperDenom2) {
 			if (Fraction[1].contains("-")) {
 				int FinalNum = ImproperNum1 - ImproperNum2;
-				Final = FinalNum + "/" + Integer.parseInt(Fraction1Parts[2]);;
+				Final = FinalNum + "/" + denominator1;
 			}
 			if (Fraction[1].contains("+")) {
 				int FinalNum = ImproperNum1 + ImproperNum2;
-				Final = FinalNum + "/" + ImproperDenom2;
+				Final = FinalNum + "/" + denominator1;
 			}
 			if (Fraction[1].contains("*")) {
 				int FinalNum = ImproperNum1 * ImproperNum2;
-				Final = FinalNum + "/" + ImproperDenom2;
+				Final = FinalNum + "/" + denominator1;
 			}
 			if (Fraction[1].contains("/")) {
 				int FinalNum = ImproperNum1 * ImproperDenom2;
