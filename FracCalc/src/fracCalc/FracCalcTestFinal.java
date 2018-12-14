@@ -41,7 +41,7 @@ public class FracCalcTestFinal
     @Test public void testAdditionCombined5() { assertEquals("-44_229/888", FracCalc.produceAnswer("-38_3/72 + -4_82/37"));}
     
     
-    @Test public void testSubtractionSimple1() {        assertEquals("1/5", FracCalc.produceAnswer("3/5 - 2/5"));}
+    @Test public void testSubtractionSimple1() {assertEquals("1/5", FracCalc.produceAnswer("3/5 - 2/5"));}
     @Test public void testSubtractionSimple2() {assertEquals("0", FracCalc.produceAnswer("1/5 - 1/5"));}
     @Test public void testSubtractionSimple3() {assertEquals("0", FracCalc.produceAnswer("4_1/2 - 4_1/2"));}
         
