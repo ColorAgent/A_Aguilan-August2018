@@ -23,21 +23,16 @@ public class MiniLab {
 		
 		
 		System.out.println("\n\nProblem 2:");
-		/* Problem 2:
-		 * The following code has errors.  It is supposed to print the schedule for this unit.
-		 * Remove the comments, run it, then find and fix the error.
-		 */
 		
 		
 		String[] schedule = {"Sec 7.1 and .split()", "for vs. for-each loops", "Sec 7.2", "Sec 7.4", "Lab Day", "Sec 7.3", "Review", "Test"};
 		int numDays = schedule.length; //7
-		for (int i = 1; i <= numDays; i++)
+		for (int i = 1; i < numDays; i++)
 		{
 			System.out.println("Day " + i + ": " + schedule[i]);
 		}
 		
 		
-	
 		
 		System.out.println("\n\nProblem 3:");		
 		/* Problem 3:
@@ -48,10 +43,15 @@ public class MiniLab {
 		 * (Ex.  "Price of meal 1: ")  
 		 * The code to print your array is given below, you just need to uncomment it. 
 		 */
-		//Scanner console = new Scanner(System.in);
-		//System.out.print("How many meals did you buy?");
-		//int numMeals = console.nextInt(); 
+		Scanner console = new Scanner(System.in);
+		System.out.print("How many meals did you buy?");
+		int numMeals = console.nextInt(); 
+		double[] MealCost = new double[numMeals];
 		
+		for(int i = 0; i < MealCost.length; i++){
+			System.out.print("Price of Meal " + (i+1) + ": ");
+			MealCost[i] = console.nextDouble();
+		} 
 		 
 		
 		//System.out.println( Arrays.toString(mealPrices) );
@@ -66,8 +66,13 @@ public class MiniLab {
 		 * (Ex. "There were ___ meals over $8 out of ___ total")
 		 */
 		
-		
-		
+		int MealsOverEight = 0;
+		for(int i = 0; i< MealCost.length; i++) {
+			if(MealCost[i] < 8);
+			MealsOverEight++;
+		}
+		System.out.println("There were " + MealsOverEight + " meals over $8 out of " + MealCost.length + " total");
+			
 		
 		
 		System.out.println("\n\nProblem 5:");
@@ -76,7 +81,12 @@ public class MiniLab {
 		 * in the array and print its cost.  (Ex.  "The most expensive meal was $_____!")		
 		 */
 		
-		
+		double MostExpensive = MealCost[0];
+		for(int i = 0; i< MealCost.length; i++) {
+			if(MealCost[i] > MostExpensive);
+			MostExpensive = MealCost[i];
+		}
+		System.out.println("The most expensive meal was $" + MostExpensive + "!");
 		
 		
 		System.out.println("\n\nProblem 6:");		
@@ -87,7 +97,7 @@ public class MiniLab {
 		 * Test it out by calling it below, and passing it your mealPrices.  
 		 * Print your result: "The average cost of a meal was $_____"  
 		 */
-		
+		System.out.println("The average cost of a meal was $" + averageMealPrice(MealCost));	
 		
 		
 		
@@ -116,6 +126,14 @@ public class MiniLab {
 		
 		
 		
+		
 	}
+	public static double averageMealPrice(double[] MealCost) {
+		double totalcost = 0;
+		for (int i=0;i<MealCost.length;i++) {
+			totalcost = 0 + MealCost[i];
+		}
+		return totalcost/MealCost.length;
 
+	}
 }
