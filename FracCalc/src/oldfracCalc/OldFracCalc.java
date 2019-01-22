@@ -4,7 +4,7 @@
  * I'm old
  */
 
-package fracCalc;
+package oldfracCalc;
 
 import java.util.Scanner;
 
