@@ -1,14 +1,14 @@
 /*\FracCalc
  * @author Alex Aguilan
  * @version 5 November 2018
- * hi
+ * I'm old
  */
 
 package fracCalc;
 
 import java.util.Scanner;
 
-public class FracCalc {
+public class OldFracCalc {
 
     public static void main(String[] args) {
     	Scanner UserInputs = new Scanner(System.in);
