@@ -1,3 +1,4 @@
+
 public class Dwarf extends Traveler
 {
 	//Dwarves will need a constructor, but there's nothing new for them beyond
@@ -6,9 +7,9 @@ public class Dwarf extends Traveler
 	//  Try it without and find out.  =]  
 	
 	//Complete the constructor
-	public Dwarf(String name)
-	{
-		
+	public Dwarf(String name) {
+		super(name);
+		travel(50);
 	}
 
 	
