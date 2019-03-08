@@ -16,9 +16,9 @@ public class TextExcel
 		String userInput = scanner.nextLine();
 		while(!userInput.equals("quit")) {
 			System.out.println(processCommand(userInput));
-		//
-		//
-		//
+		// 
+		// 
+		// 
 		
 			System.out.println("Enter a command");
 			userInput = scanner.nextLine();

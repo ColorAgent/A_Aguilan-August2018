@@ -13,26 +13,23 @@ public class Spreadsheet implements Grid
 		numOfCols = 12;
 		// rows columns 
 		String Sheet[][] = new String [numOfRows][numOfCols];
-		// refrator rows columns and array
-		for(int i = 0; i<rows; i++)
-		    for(int j = 0; j<columns; j++)
-		        array[i][j] = 0;
+		for(int i = 0; i<numOfRows; i++)
+		for(int j = 0; j<numOfCols; j++)
+		Sheet[i][j] = "0   ";
 
-		for(int i = 0; i<rows; i++)
-		{
-		    for(int j = 0; j<columns; j++)
-		    {
-		        System.out.print(array[i][j]);
+		for(int i = 0; i<numOfRows; i++) {
+		    for(int j = 0; j<numOfCols; j++) {
+		        System.out.print(Sheet[i][j]);
 		    }
 		    System.out.println();
-		}
-		
+		}		
 	}
+	
 	@Override
 	public String processCommand(String command)
 	{
 		// TODO Auto-generated method stub
-		return null;
+		return " ";
 	}
 
 	@Override
