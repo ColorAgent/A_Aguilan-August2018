@@ -15,7 +15,8 @@ public class TextExcel
 		System.out.print("Enter value here");
 		String userInput = scanner.nextLine();
 		while(!userInput.equals("quit")) {
-			System.out.println(processCommand(userInput));
+			Spreadsheet tuna = new Spreadsheet();
+			System.out.println(tuna.processCommand(userInput));
 		// 
 		// 
 		// 

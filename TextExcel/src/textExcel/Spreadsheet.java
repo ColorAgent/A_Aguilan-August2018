@@ -4,6 +4,7 @@ package textExcel;
 
 public class Spreadsheet implements Grid
 {
+	private Cell[][] sheet;
 	private int numOfRows;
 	private int numOfCols;
 	//constructor
@@ -11,25 +12,19 @@ public class Spreadsheet implements Grid
 		//initialize a 20 array of EmptyCells
 		numOfRows = 20;
 		numOfCols = 12;
-		// rows columns 
-		String Sheet[][] = new String [numOfRows][numOfCols];
-		for(int i = 0; i<numOfRows; i++)
-		for(int j = 0; j<numOfCols; j++)
-		Sheet[i][j] = "0   ";
-
-		for(int i = 0; i<numOfRows; i++) {
-		    for(int j = 0; j<numOfCols; j++) {
-		        System.out.print(Sheet[i][j]);
-		    }
-		    System.out.println();
-		}		
+		sheet = new Cell [numOfRows][numOfCols];
+		for(int r = 0; r<numOfRows; r++) {
+			for(int c = 0; c<numOfCols; c++) {
+				// rows columns 
+				sheet[r][c] = new EmptyCell();
+			}
+		}
 	}
-	
 	@Override
 	public String processCommand(String command)
 	{
 		// TODO Auto-generated method stub
-		return " ";
+		return "";
 	}
 
 	@Override
