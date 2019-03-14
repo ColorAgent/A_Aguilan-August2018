@@ -1,7 +1,7 @@
 package textExcel;
 
 public class TextCell implements Cell{
-
+	private Cell[][] sheet;
 	
 	public String abbreviatedCellText() {
 		// TODO Auto-generated method stub
@@ -11,7 +11,6 @@ public class TextCell implements Cell{
 	
 	public String fullCellText() {
 		// TODO Auto-generated method stub
-		return "\"\"";
+		return "\"sheet[r][c]\"";
 	}
-
 }

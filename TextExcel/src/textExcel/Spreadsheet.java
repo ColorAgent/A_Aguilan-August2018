@@ -21,10 +21,10 @@ public class Spreadsheet implements Grid
 		}
 	}
 	@Override
-	public String processCommand(String command)
-	{
+	public String processCommand(String command) {
+		
 		// TODO Auto-generated method stub
-		return "";
+		return getCell(command);
 	}
 
 	@Override
@@ -42,10 +42,11 @@ public class Spreadsheet implements Grid
 	}
 
 	@Override
-	public Cell getCell(Location loc)
-	{
-		// TODO Auto-generated method stub
-		return null;
+	public Cell getCell(Location loc) {
+		int locRow = loc.getRow();
+		int locCol = loc.getCol();
+		
+		return sheet[locRow][locCol];
 	}
 
 	@Override
