@@ -22,9 +22,8 @@ public class Spreadsheet implements Grid
 	}
 	@Override
 	public String processCommand(String command) {
-		
 		// TODO Auto-generated method stubb
-		return getCell(command);
+		return "";
 	}
 
 	@Override
@@ -50,9 +49,9 @@ public class Spreadsheet implements Grid
 	}
 
 	@Override
-	public String getGridText()
-	{
-		// TODO Auto-generated method stub
+	public String getGridText() {
+		
+		
 		return null;
 	}
 

@@ -5,17 +5,11 @@ package textExcel;
 public class SpreadsheetLocation implements Location {
     private int row;
     private int column;
-	@Override
-    public int getRow() {
-    	
-        
+    
+    public int getRow() {    
         return row;
     }
-
-    @Override
-    public int getCol()
-    {
-        // TODO Auto-generated method stub
+    public int getCol() {
         return column;
     }
     
@@ -26,5 +20,8 @@ public class SpreadsheetLocation implements Location {
     	column = cellName.charAt(0) - 'A';
         // TODO: Fill this out with your own code
     }
-
+    public SpreadsheetLocation(int row, int column) {
+    	this.row = row;
+    	this.column = column;
+    }
 }

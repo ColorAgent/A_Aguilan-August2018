@@ -1,16 +1,18 @@
 package textExcel;
 
 public class TextCell implements Cell{
-	private Cell[][] sheet;
+	private String[][] storage;
+	private String storedvalue;
 	
+	// returns abbreviated version of text including 10 characters does not need quotation marks
 	public String abbreviatedCellText() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return storedvalue + "          " ;
 	}
 
-	
+	// returns exact copy of the original string entered into the cell including quotation marks
 	public String fullCellText() {
 		// TODO Auto-generated method stub
-		return "\"sheet[r][c]\"";
+		return  "\"storedvalue\"";
 	}
 }
