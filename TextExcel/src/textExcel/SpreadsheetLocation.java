@@ -18,7 +18,6 @@ public class SpreadsheetLocation implements Location {
     	char col = cellName.charAt(0);
     	row = Integer.parseInt(cellName.substring(1)) - 1;
     	column = cellName.charAt(0) - 'A';
-        // TODO: Fill this out with your own code
     }
     public SpreadsheetLocation(int row, int column) {
     	this.row = row;

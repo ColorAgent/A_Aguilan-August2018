@@ -13,7 +13,7 @@ public class TextCell implements Cell{
 		}
 		if(text.length() < 10) {
 			for(int i = text.length(); i < 10; i++) {
-				text = text + " ";
+				text += " ";
 			}
 		}else {
 			text = text.substring(0, 10);

@@ -1,5 +1,7 @@
 package textExcel;
 
+import java.util.Arrays;
+
 // Update this file with your own code.
 
 public class Spreadsheet implements Grid
@@ -10,8 +12,9 @@ public class Spreadsheet implements Grid
 	//constructor
 	public Spreadsheet() {
 		//initialize a 20 array of EmptyCells
-		numOfRows = 20;
-		numOfCols = 12;
+		//+1 array for headers and stuff
+		numOfRows = 21;
+		numOfCols = 13;
 		sheet = new Cell [numOfRows][numOfCols];
 		for(int r = 0; r<numOfRows; r++) {
 			for(int c = 0; c<numOfCols; c++) {
@@ -22,14 +25,16 @@ public class Spreadsheet implements Grid
 	}
 	@Override
 	public String processCommand(String command) {
-		// TODO Auto-generated method stubb
+		String[] commandInspector = command.split(" ");
+		if(commandInspector.length < 2) {
+			return getCell();
+		}
 		return "";
 	}
 
 	@Override
 	public int getRows()
 	{
-		// TODO Auto-generated method stub
 		return numOfRows;
 	}
 
