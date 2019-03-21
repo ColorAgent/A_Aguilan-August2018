@@ -42,10 +42,7 @@ public class Spreadsheet implements Grid
 
 	@Override
 	public Cell getCell(Location loc) {
-		int locRow = loc.getRow();
-		int locCol = loc.getCol();
-		
-		return sheet[locRow][locCol];
+		return sheet[loc.getRow()][loc.getCol()];
 	}
 
 	@Override
