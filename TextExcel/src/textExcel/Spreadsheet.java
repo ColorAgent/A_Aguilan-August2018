@@ -13,8 +13,8 @@ public class Spreadsheet implements Grid
 	public Spreadsheet() {
 		//initialize a 20 array of EmptyCells
 		//+1 array for headers and stuff
-		numOfRows = 21;
-		numOfCols = 13;
+		numOfRows = 20;
+		numOfCols = 12;
 		sheet = new Cell [numOfRows][numOfCols];
 		for(int r = 0; r<numOfRows; r++) {
 			for(int c = 0; c<numOfCols; c++) {
@@ -25,9 +25,18 @@ public class Spreadsheet implements Grid
 	}
 	@Override
 	public String processCommand(String command) {
-		String[] commandInspector = command.split(" ");
+		String[] commandInspector = command.split(" ", 3);
 		if(commandInspector.length < 2) {
-			return getCell();
+			return getCell(new SpreadsheetLocation(command)).fullCellText();
+		}
+		if(commandInspector[1].contains("=")) {
+			char col = command.charAt(0);
+			int row = Integer.parseInt(command.substring(1));
+			new SpreadsheetLocation(row, Character.getNumericValue(col));
+			return getGridText();
+		}
+		if(commandInspector[0].contains("clear")) {
+			
 		}
 		return "";
 	}
@@ -52,7 +61,9 @@ public class Spreadsheet implements Grid
 
 	@Override
 	public String getGridText() {
-		
+		for(int i = 0; i<numOfCols; i++) {
+			char 
+		}
 		
 		return null;
 	}

@@ -8,9 +8,6 @@ public class TextCell implements Cell{
 }
 	// returns abbreviated version of text including 10 characters does not need quotation marks
 	public String abbreviatedCellText() {
-		if(text.contains("\"")) {
-			text = text.substring(1, text.length() - 1);
-		}
 		if(text.length() < 10) {
 			for(int i = text.length(); i < 10; i++) {
 				text += " ";
