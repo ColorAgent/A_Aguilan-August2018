@@ -74,7 +74,7 @@ public class Spreadsheet implements Grid
     public String getGridText(){
         String grid = "   |";
         for(int i = 0; i < numOfCols; i++) {
-            grid += (char)(i + 'A') + "         |";
+            grid += (char)(i + 'A') + "          |";
         }
          
         for(int i = 1; i <= numOfRows; i++) {
