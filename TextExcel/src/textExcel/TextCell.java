@@ -1,25 +1,34 @@
 package textExcel;
 
 public class TextCell implements Cell{
-	private String text;
+	private String text, fullText;
 	
 	public TextCell(String text) {
 		this.text = text;
-}
-	// returns abbreviated version of text including 10 characters does not need quotation marks
+		this.fullText = text;
+	}
+	
+	@Override
 	public String abbreviatedCellText() {
+		// removes the?
+		if(text.contains("\"")) {
+			text = text.substring(1, text.length() - 1);
+		}
+		// fills in the cell if its less than 10 spaces
 		if(text.length() < 10) {
 			for(int i = text.length(); i < 10; i++) {
-				text += " ";
+				text = text + " ";
 			}
+		// otherwise returns cell as normal
 		}else {
 			text = text.substring(0, 10);
 		}
 		return text;
 	}
 
-	// returns exact copy of the original string entered into the cell including quotation marks
-	public String fullCellText() {   
-		return text;
+	@Override
+	public String fullCellText() {
+		return fullText;
 	}
+
 }
