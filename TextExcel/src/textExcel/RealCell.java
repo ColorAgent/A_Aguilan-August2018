@@ -2,11 +2,9 @@
 //@version date
 package textExcel;
 
-public class EmptyCell implements Cell {
+public class RealCell implements Cell {
 	private String filler;
-	public EmptyCell() {
-		filler = "          ";
-	}
+
 	// text for spreadsheet cell display, must be exactly length 10
 	public String abbreviatedCellText() {
 		return filler;

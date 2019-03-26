@@ -1,7 +1,8 @@
 package textExcel;
 
 public class TextCell implements Cell{
-	private String text, fullText;
+	private String text;
+	private String fullText;
 	
 	public TextCell(String text) {
 		this.text = text;
