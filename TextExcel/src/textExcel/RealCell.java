@@ -4,10 +4,9 @@ package textExcel;
 
 public class RealCell implements Cell {
 	private String input;
-	private String doubleRino;
 	
-	public RealCell(String woo) {
-		this.input = woo;
+	public RealCell(String userInput) {
+		this.input = userInput;
 	}
 	// text for spreadsheet cell display, must be exactly length 10
 	public String abbreviatedCellText() {
@@ -16,8 +15,5 @@ public class RealCell implements Cell {
 	// text for individual cell inspection, not truncated or padded
 	public String fullCellText() {
 		return input;
-	}
-	public double getDouble(String doubleRino) {
-		return Double.parseDouble(doubleRino);
 	}
 }

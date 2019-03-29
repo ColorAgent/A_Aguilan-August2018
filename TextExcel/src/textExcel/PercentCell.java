@@ -6,12 +6,14 @@ public class PercentCell extends RealCell{
 	public PercentCell(String input) {
 		super(input);
 	}
+	// text for spreadsheet cell display, must be exactly length 10
 	public String abbreviatedCellText() {
-		percent.split("\\.");
-		return percent[0] + (" %           ").substring(0, 10);
+		String percent.split("\\.");
+		return percent[i] + ("          ").substring(0, 10);
 	}
 	// text for individual cell inspection, not truncated or padded
 	public String fullCellText() {
-		return "";
+		percent.split("\\.");
+		return percent;
 	}
 }
