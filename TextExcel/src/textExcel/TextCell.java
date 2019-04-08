@@ -11,7 +11,7 @@ public class TextCell implements Cell{
 	
 	@Override
 	public String abbreviatedCellText() {
-		// removes the?
+		// removes the ?
 		if(text.contains("\"")) {
 			text = text.substring(1, text.length() - 1);
 		}
