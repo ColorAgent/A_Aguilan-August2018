@@ -1,5 +1,5 @@
-//@author Alex Aguilan
-//@version date
+// @author Alex Aguilan
+// @version March 27, 2019
 package textExcel;
 
 public class EmptyCell implements Cell {

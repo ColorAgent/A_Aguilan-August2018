@@ -1,3 +1,5 @@
+// @author Alex Aguilan
+// @version March 27, 2019
 package textExcel;
 
 public class TextCell implements Cell{
@@ -11,16 +13,14 @@ public class TextCell implements Cell{
 	
 	@Override
 	public String abbreviatedCellText() {
-		// removes the?
+		// removes the quotation marks
 		if(text.contains("\"")) {
 			text = text.substring(1, text.length() - 1);
 		}
 		// fills in the cell if its less than 10 spaces
 		if(text.length() < 10) {
-			for(int i = text.length(); i < 10; i++) {
-				text = text + " ";
-			}
-		// otherwise returns cell as normal
+				text = (text + "          ").substring(0, 10);
+		// otherwise returns cell as normal and fits it into the cell w/ 10 chars
 		}else {
 			text = text.substring(0, 10);
 		}
@@ -28,6 +28,7 @@ public class TextCell implements Cell{
 	}
 
 	@Override
+	// returns original text unaltered
 	public String fullCellText() {
 		return fullText;
 	}

@@ -1,8 +1,9 @@
+// @author Alex Aguilan
+// @version March 27, 2019
 package textExcel;
 
 import java.util.Arrays;
 
-// Update this file with your own code.
 
 public class Spreadsheet implements Grid
 {
@@ -12,7 +13,6 @@ public class Spreadsheet implements Grid
     //constructor
     public Spreadsheet() {
         //initialize a 20 array of EmptyCells
-        //+1 array for headers and stuff
         numOfRows = 20;
         numOfCols = 12;
         sheet = new Cell [numOfRows][numOfCols];
@@ -31,16 +31,18 @@ public class Spreadsheet implements Grid
         if(command.length() <= 3) {
             return getCell(new SpreadsheetLocation(command)).fullCellText();
         }
+        // sets a cell to a certain value
         if(command.contains("=")) {
             SpreadsheetLocation location = new SpreadsheetLocation(commandInspector[0]);
             TextCell newCell = new TextCell(commandInspector[2]);
             sheet[location.getRow()][location.getCol()] = newCell;
         }
-        // clears specific cell
+        // clears specific cell if theres a space
         if(command.toLowerCase().contains("clear ")) {
             SpreadsheetLocation location = new SpreadsheetLocation(commandInspector[1]);
             sheet[location.getRow()][location.getCol()] = new EmptyCell();
         } else {
+        // clears the entire sheet and resets it
             if (command.toLowerCase().equals("clear")) {
                 for(int i = 0; i < 20; i++) {
                     for(int j = 0; j < 12; j++) {
@@ -73,6 +75,7 @@ public class Spreadsheet implements Grid
     @Override
     public String getGridText(){
         String grid = "   |";
+        // initialize 1st row A through B
         for(int m = 0; m < numOfCols; m++) {
             grid = grid + (char)(m + 'A') + "         |";
         }
@@ -83,8 +86,9 @@ public class Spreadsheet implements Grid
             }else {
                 grid = grid + "\n" + c + " |";
             }
+            // sets up each cell space and makes sure its at least 10 characters
             
-        for(int r = 0; r < numOfCols; r++) {
+            for(int r = 0; r < numOfCols; r++) {
         	grid = grid + sheet[c-1][r].abbreviatedCellText() + "|";
             }
         }
