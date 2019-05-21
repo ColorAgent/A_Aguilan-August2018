@@ -1,7 +1,8 @@
 import java.util.Arrays;
 
-public class Test {
+public class Test implements Test2 {
 	
+<<<<<<< HEAD
 	private static int numOfRows;
 	private static int numOfCols;
 	//constructor
@@ -23,3 +24,8 @@ public class Test {
 		}		
 	}
 }
+=======
+}
+	
+	
+>>>>>>> branch 'master' of https://github.com/ColorAgent/A_Aguilan-August2018.git
