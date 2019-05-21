@@ -59,13 +59,11 @@ public class Spreadsheet implements Grid
         return getGridText();
     }
 
-    @Override
     public int getRows()
     {
         return numOfRows;
     }
 
-    @Override
     public int getCols()
     {
         // TODO Auto-generated method stub
