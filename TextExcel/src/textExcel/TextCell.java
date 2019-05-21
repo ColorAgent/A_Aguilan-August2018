@@ -13,11 +13,8 @@ public class TextCell implements Cell{
 	
 	@Override
 	public String abbreviatedCellText() {
-<<<<<<< HEAD
 		// removes the quotation marks
-=======
 		// removes the ?
->>>>>>> branch 'master' of https://github.com/ColorAgent/A_Aguilan-August2018.git
 		if(text.contains("\"")) {
 			text = text.substring(1, text.length() - 1);
 		}
