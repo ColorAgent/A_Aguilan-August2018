@@ -51,6 +51,11 @@ public class Spreadsheet implements Grid
                 }
             }
         }
+        if(command.contains("%")) {
+        	SpreadsheetLocation location = new SpreadsheetLocation(commandInspector[0]);
+        	PercentCell newCell = new PercentCell(commandInspector[2]);
+        	sheet[location.getRow()][location.getCol()] = newCell;
+        }
         return getGridText();
     }
 
@@ -79,7 +84,6 @@ public class Spreadsheet implements Grid
         for(int m = 0; m < numOfCols; m++) {
             grid = grid + (char)(m + 'A') + "         |";
         }
-         
         for(int c = 1; c <= numOfRows; c++) {
             if(c < 10) {
                 grid = grid + "\n" + c + "  |";
